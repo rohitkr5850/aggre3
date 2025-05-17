@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-
 const loanSchema = new mongoose.Schema({
   bookId: { type: mongoose.Schema.Types.ObjectId, ref: 'Book' },
   borrowerId: { type: mongoose.Schema.Types.ObjectId, ref: 'Borrower' },

@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Loan = require('../models/loan.model');
 
-// POST /loans — create new loan
 router.post('/', async (req, res) => {
   try {
     const loan = new Loan(req.body);

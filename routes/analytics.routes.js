@@ -5,7 +5,6 @@ const Book = require('../models/book.model');
 const Borrower = require('../models/borrower.model');
 const mongoose = require('mongoose');
 
-// 1. GET /analytics/borrowed-books
 router.get('/borrowed-books', async (req, res) => {
   try {
     const result = await Loan.aggregate([
@@ -43,7 +42,6 @@ router.get('/borrowed-books', async (req, res) => {
   }
 });
 
-// 2. GET /analytics/top-borrowed-books
 router.get('/top-borrowed-books', async (req, res) => {
   try {
     const result = await Loan.aggregate([
@@ -71,7 +69,6 @@ router.get('/top-borrowed-books', async (req, res) => {
   }
 });
 
-// 3. GET /analytics/borrower-history/:id
 router.get('/borrower-history/:id', async (req, res) => {
   try {
     const id = new mongoose.Types.ObjectId(req.params.id);
@@ -92,7 +89,6 @@ router.get('/borrower-history/:id', async (req, res) => {
   }
 });
 
-// 4. GET /analytics/frequent-borrowers
 router.get('/frequent-borrowers', async (req, res) => {
   try {
     const result = await Loan.aggregate([
@@ -118,7 +114,6 @@ router.get('/frequent-borrowers', async (req, res) => {
   }
 });
 
-// 5. GET /analytics/loan-reports
 router.get('/loan-reports', async (req, res) => {
   try {
     const result = await Loan.aggregate([
